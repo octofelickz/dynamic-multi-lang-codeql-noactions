@@ -20,6 +20,9 @@ jobs:
         with:
           access-token: ${{ secrets.GITHUB_TOKEN }}
           endpoint: ${{ github.event.repository.languages_url }}
+      - name: Print JSON
+        run: echo '${{ steps.set-matrix.outputs.languages }}'
+          
           
   analyze:
     needs: create-matrix
